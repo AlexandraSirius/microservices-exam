@@ -43,7 +43,9 @@ server {
             return 401;
         }
 
-
+        if ($http_x_rpc_method = "") {
+            return 400;
+        }
 
         if ($http_content_type != "application/json") {
             return 400;
