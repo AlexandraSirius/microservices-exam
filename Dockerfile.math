@@ -1,0 +1,11 @@
+FROM alpine:3.21 AS math-service
+
+WORKDIR /service
+
+COPY ./bin/math-service .
+
+RUN chmod +x /service/math-service
+
+EXPOSE 80
+
+CMD ["/service/math-service"]

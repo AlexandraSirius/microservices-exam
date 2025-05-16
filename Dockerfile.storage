@@ -1,0 +1,11 @@
+FROM alpine:3.21 AS storage-service
+
+WORKDIR /service
+
+COPY ./bin/storage-service .
+
+RUN chmod +x /service/storage-service
+
+EXPOSE 80
+
+CMD ["/service/storage-service"]
